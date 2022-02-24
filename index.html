@@ -7,7 +7,23 @@
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <ul>
+      <li v-for="bird in birds" v-text="bird"></li>
+    </ul>
+    dot notation:
+    <ul>
+      <li v-for="person in people" :key="person.name"><div>name: {{ person.name }}</div> <div>age: {{ person.age }}</div></li>
+    </ul>
+    list from list:
+    <ul>
+      <li v-for="person in people" :key="person.name"><div v-for="(value, key) in person" :key="key">{{key}}: {{value}}</div></li>
+    </ul>
+    destructuting assignment:
+    <ul>
+      <li v-for="{ name, age } in people" :key="name"><div>name: {{ name }}</div> <div>age: {{ age }}</div></li>
+    </ul>
+  </div>
 
   <script src="https://unpkg.com/vue@next"></script>
   <script src="app.js"></script>
